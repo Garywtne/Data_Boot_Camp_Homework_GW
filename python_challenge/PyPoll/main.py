@@ -43,5 +43,5 @@ print("----------------------")
 
 # TODO now I want to output to a text file
 f = open(r"G:\My Drive\BOOTCAMP\Data_Boot_Camp_Homework_GW\python_challenge\PyPoll\Analysis\PyPoll.txt", 'w')
-f.writelines(["Election Results"," ","----------------------"," ",f"Total Votes: {str(votes)}"," ","----------------------"])
+f.writelines(["Election Results","\n","----------------------","\n",f"Total Votes: {str(votes)}","\n","----------------------"])
 f.close()
