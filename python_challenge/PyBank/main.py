@@ -25,10 +25,14 @@ with open(Budget_data) as csvfile:
     csv_header = next(csvreader)
 
 
-    # set initial values for the number of rows and the sum of values
+    # set initial values for the number of rows, sum of values, Average Change, Greatest Increase and Greatest Decrease
 
     num_rows = 0
     sum_rows = 0
+    Average_Change = 0
+    Greatest_Increase = 0
+    Greatest_Decrease = 0
+
 
     # Reads and prints each row of data after the header
 
@@ -39,6 +43,7 @@ with open(Budget_data) as csvfile:
 #for row in open(csvpath):
         num_rows += 1
         sum_rows += int(row[1])
+        
 
 print(" ")
 
@@ -72,5 +77,5 @@ print(f"Greatest Decrease in profits ${str()} ")
 
 # TODO now I want to output to a text file
 f = open(r"G:\My Drive\BOOTCAMP\Data_Boot_Camp_Homework_GW\python_challenge\PyBank\Analysis\PyBank.txt", 'w')
-f.writelines(["Finacial Analysis"," ","------------------"," ",f"Total Months: {str(num_rows)}"," ",f"Total: ${str(sum_rows)}"," ",f"Average Change: ${str()}"," ",f"Greatest Increase in profits ${str()} "," ",f"Greatest Decrease in profits ${str()} "])
+f.writelines(["Finacial Analysis","\n","------------------","\n",f"Total Months: {str(num_rows)}","\n",f"Total: ${str(sum_rows)}","\n",f"Average Change: ${str()}","\n",f"Greatest Increase in profits ${str()} ","\n",f"Greatest Decrease in profits ${str()} "])
 f.close()
