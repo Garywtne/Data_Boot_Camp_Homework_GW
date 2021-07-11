@@ -1,5 +1,5 @@
 
-# First we'll import the os module
+# Import the os module
 
 import os
 
@@ -11,13 +11,15 @@ import csv
 
 election_data = r"G:\My Drive\BOOTCAMP\Data_Boot_Camp_Homework_GW\python_challenge\PyPoll\Resources\election_data.csv"
 
-# Reading the file using CSV module
+# Read the file using CSV module
 
 with open(election_data) as csvfile:
 
 
 
-# TODO now I want to define a varialbe called votes to count the total votes excluding the Header
+
+# define a varialbe called votes to count the total votes excluding the Header
+
     votes = -1
 
 # TODO now I want to define a varialble called candiates to count the candidates excluding the Header
@@ -27,21 +29,22 @@ with open(election_data) as csvfile:
     
 for row in open(election_data):
     votes += 1
+
 print(" ")
-# TODO now I want to print "Election Results" and "--------------------"
+# print "Election Results" and "--------------------"
 
 print("Election Results")
 print("----------------------")
 
-# TODO now I want to print the total number of votes cast
+# print the total number of votes cast
 
 print(f"Total Votes: {str(votes)}")
 
-# TODO now I want to print "--------------------"
+# print "--------------------"
 
 print("----------------------")
 
-# TODO now I want to output to a text file
+# output to a text file
 f = open(r"G:\My Drive\BOOTCAMP\Data_Boot_Camp_Homework_GW\python_challenge\PyPoll\Analysis\PyPoll.txt", 'w')
 f.writelines(["Election Results","\n","----------------------","\n",f"Total Votes: {str(votes)}","\n","----------------------"])
 f.close()

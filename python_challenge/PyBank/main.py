@@ -3,7 +3,7 @@
 
 import os
 
-# Then import the Module for reading CSV files
+# Import the Module for reading CSV files
 
 import csv
 
@@ -16,33 +16,33 @@ Budget_data = r"G:\My Drive\BOOTCAMP\Data_Boot_Camp_Homework_GW\python_challenge
 
 with open(Budget_data) as csvfile:
 
-    # CSV reader specifies delimiter and variable called csv.reader that holds contents
+    # CSV reader specifies delimiter and a variable called Budget_data that holds contents
 
-    csvreader = csv.reader(csvfile, delimiter=',')
+    Budget_data = csv.reader(csvfile, delimiter=',')
+    
+    # Reads the header row first and prints it
 
-    # Reads the header row first and print it
+    header = next(Budget_data)
 
-    csv_header = next(csvreader)
+    print(" ")
 
+    print(header)
 
-    # set initial values for the number of rows, sum of values, Average Change, Greatest Increase and Greatest Decrease
+    # define the variables and set initial values for the number of rows, sum of values, Average Change, Greatest Increase and Greatest Decrease
 
     num_rows = 0
-    sum_rows = 0
+    sum_values = 0
     Average_Change = 0
     Greatest_Increase = 0
     Greatest_Decrease = 0
 
-
-    # Reads and prints each row of data after the header
-
-    for row in csvreader:
+   
+    for row in Budget_data:
        
-# TODO now I want to count the dates in the Date column excluding the Header
+        # define a variable for counting the dates in the Date column excluding the Header and for summing up the values in the Profit/Losses column
 
-#for row in open(csvpath):
         num_rows += 1
-        sum_rows += int(row[1])
+        sum_values += int(row[1])
         
 
 print(" ")
@@ -51,31 +51,34 @@ print("Finacial Analysis")
 
 print("-------------------")
 
-# print(sum_rows)
+# print the sum of rows
 
 print(f"Total Months: {str(num_rows)}")
 
-# TODO here I want to sum up all of the values in the second column.
+# print the sum of values
 
-print(f"Total: ${str(sum_rows)}")
+print(f"Total: ${str(sum_values)}")
+
+# TODO here I want to calculate the changes in Profit/Loss from month to month and then calculate the average 
 
 
-
-
-# TODO here I want to calculate the changes in Profit/Loss from month to month, write them to the csv and then calculate the average 
-
+# print the average change
 print(f"Average Change: ${str()}")
 
 # TODO here I want to find the highest value change and the date that it happened
 
+
+# print the Greatest Increase in profits
 print(f"Greatest Increase in profits ${str()} ")
 
 # TODO here I want to find the lowest value change and the date that it happened
 
+
+# print the greatest decrease in profit and the dat it happened
 print(f"Greatest Decrease in profits ${str()} ")
 
 
-# TODO now I want to output to a text file
+# output results to a text file
 f = open(r"G:\My Drive\BOOTCAMP\Data_Boot_Camp_Homework_GW\python_challenge\PyBank\Analysis\PyBank.txt", 'w')
-f.writelines(["Finacial Analysis","\n","------------------","\n",f"Total Months: {str(num_rows)}","\n",f"Total: ${str(sum_rows)}","\n",f"Average Change: ${str()}","\n",f"Greatest Increase in profits ${str()} ","\n",f"Greatest Decrease in profits ${str()} "])
+f.writelines(["Finacial Analysis","\n","------------------","\n",f"Total Months: {str(num_rows)}","\n",f"Total: ${str(sum_values)}","\n",f"Average Change: ${str()}","\n",f"Greatest Increase in profits ${str()} ","\n",f"Greatest Decrease in profits ${str()} "])
 f.close()
