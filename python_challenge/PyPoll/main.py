@@ -15,11 +15,19 @@ election_data = r"G:\My Drive\BOOTCAMP\Data_Boot_Camp_Homework_GW\python_challen
 
 with open(election_data) as csvfile:
 
-# TODO now I want to count the total votes excluding the Header
-    num_rows = -1
-for row in open(election_data):
-    num_rows += 1
 
+
+# TODO now I want to define a varialbe called votes to count the total votes excluding the Header
+    votes = -1
+
+# TODO now I want to define a varialble called candiates to count the candidates excluding the Header
+
+    
+
+    
+for row in open(election_data):
+    votes += 1
+print(" ")
 # TODO now I want to print "Election Results" and "--------------------"
 
 print("Election Results")
@@ -27,12 +35,13 @@ print("----------------------")
 
 # TODO now I want to print the total number of votes cast
 
-print(f"Total Votes: {str(num_rows)}")
+print(f"Total Votes: {str(votes)}")
 
 # TODO now I want to print "--------------------"
 
 print("----------------------")
 
-# TODO now I want to print a list of the candidates
-
-
+# TODO now I want to output to a text file
+f = open(r"G:\My Drive\BOOTCAMP\Data_Boot_Camp_Homework_GW\python_challenge\PyPoll\Analysis\PyPoll.txt", 'w')
+f.writelines(["Election Results"," ","----------------------"," ",f"Total Votes: {str(votes)}"," ","----------------------"])
+f.close()
